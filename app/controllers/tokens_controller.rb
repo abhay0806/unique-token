@@ -26,9 +26,16 @@ class TokensController < ApplicationController
   end
 
   def destroy
+    @token =  Token.find_by(id: @token.id)
     if @token.destroy
       head :ok
     else
       render json: token.errors.as_json(full_messages: true), status: :unprocessable_entity
+  end
+
+  def delete_token
+    return if @token.nil?
+    @token =  (Token.last.created_at > 1.minute.ago)
+    @token.destroy
   end
 end

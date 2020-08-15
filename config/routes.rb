@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       delete :deactivate
       post :reactivate
       post :send_generate_token
+      post :delete_token
     end
   end
 end

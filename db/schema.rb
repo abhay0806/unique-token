@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_194523) do
+ActiveRecord::Schema.define(version: 2020_08_15_180840) do
 
   create_table "tokens", force: :cascade do |t|
     t.integer "token_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_active", default: false
+    t.datetime "start_time"
   end
 
 end
